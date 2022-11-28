@@ -1,0 +1,60 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+
+  background: hsl(173, 50%, 50%);
+  position: relative;
+}
+
+h1 {
+  font-family: monospace;
+  font-size: 2em;
+  color: hsl(173, 50%, 100%);
+
+  margin: 1em auto;
+  width: fit-content;
+}
+
+main {
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 2em;
+}
+
+main canvas {
+  width: 480px;
+  height: 480px;
+
+  border: 5px solid hsl(173, 50%, 100%);
+}
+
+footer {
+  width: 100%;
+  background: hsl(173, 50%, 100%);
+
+  font-size: 1.5em;
+  font-family: monospace;
+  text-align: center;
+  color: hsl(173, 50%, 50%);
+
+  padding: 0.8em;
+
+  position: fixed;
+  bottom: 0;
+}
+
+footer span {
+  color : hsl(0, 50%, 50%);
+}
