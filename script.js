@@ -24,7 +24,7 @@ let isChecking = false;
 let animationFrameId = undefined; 
 let isCollision = false;
 
-(function (){
+function setLastMove(){
   const r = getRandomNumber(1, 4);
   switch(r) {
     case 1 : arrowkeyPressed = moves.arrowUp
@@ -33,7 +33,7 @@ let isCollision = false;
     case 4 : arrowkeyPressed = moves.arrowRight
   }
   lastMove = arrowkeyPressed
-})()
+}
 
 class Snake {
   constructor(x, y, direction) {
@@ -280,11 +280,12 @@ const updateSnake = () => {
 
     isCollision = checkSelfCollision(newX, newY)
     isSnakeUpdating = false
-  }, 100) 
+  }, 200) 
 }
 
 const animate = (e) => {
   // console.log(e)
+  console.log(isCollision);
   if(isCollision) {
     cancelAnimationFrame(animationFrameId)
     paintScore()
@@ -306,6 +307,7 @@ const animate = (e) => {
 
 const init = () => {
   isCollision = false
+  setLastMove()
   newSnakeHead()
   newfood()
   animationFrameId = requestAnimationFrame(animate)
